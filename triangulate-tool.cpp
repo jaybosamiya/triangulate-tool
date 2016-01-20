@@ -14,15 +14,9 @@ vector<Point> point_set;
 
 int opacity = 75;
 
+Subdiv2D subdiv;
+
 void run_filter(int, void*) {
-  output_image = input_image.clone();
-
-  Subdiv2D subdiv(Rect(0, 0, input_image.cols, input_image.rows));
-
-  for ( int i = 0 ; i < point_set.size() ; i++ ) {
-    subdiv.insert(point_set[i]);
-  }
-
   output_image = input_image.clone();
 
   vector<Vec6f> triangle_list;
@@ -58,6 +52,7 @@ void on_mouse(int event, int x, int y, int, void*) {
     return;
 
   point_set.push_back(Point(x, y));
+  subdiv.insert(Point(x, y));
 
   run_filter(0, 0);
 }
@@ -76,6 +71,7 @@ int main( int argc, char** argv ) {
   }
 
   cvtColor(input_image, input_image_gray, CV_BGR2GRAY);
+  subdiv.initDelaunay(Rect(0, 0, input_image.cols, input_image.rows));
 
   namedWindow(window_name, CV_WINDOW_AUTOSIZE);
   createTrackbar("Opacity of triangles: ", window_name, &opacity, 100, run_filter);
