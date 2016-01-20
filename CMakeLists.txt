@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( triangulate-tool )
+find_package( OpenCV REQUIRED )
+add_executable( triangulate-tool triangulate-tool )
+target_link_libraries( triangulate-tool ${OpenCV_LIBS} )
