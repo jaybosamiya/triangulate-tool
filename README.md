@@ -3,14 +3,14 @@ Triangulate Tool
 
 > Easily convert any image into low-poly art in just a few clicks
 
-![](images/in.jpg) to ![](images/out.jpg)
+Convert ![](images/in.jpg) to ![](images/out.jpg)
 
 Screenshots
 -----------
 
-![](images/screenshot1.png)
+![](images/screenshot1.jpg)
 
-![](images/screenshot2.png)
+![](images/screenshot2.jpg)
 
 How it works
 ------------
