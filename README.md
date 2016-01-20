@@ -24,6 +24,10 @@ Usage
 ./triangulate-tool input_image output_image
 ```
 
+Use the opacity bar to switch between the original image and the low-poly image.
+
+Press `s` at any time to save the image, and `q` to quit.
+
 Build process
 -------------
 
